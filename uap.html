@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAP</title>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: antiquewhite;
+        display: grid;
+        justify-content: center;
+        justify-self: center;
+      }
+
+      td {
+        color: black;
+        border: 1px solid;
+        padding: 5px;
+      }
+
+      .title-table {
+        color: black;
+        font-weight: bolder;
+      }
+
+      .title-web {
+        align-items: center;
+        display: grid;
+        justify-content: center;
+      }
+
+      .navigation {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 20px;
+        display: inline-flex;
+        text-decoration: solid;
+        text-decoration-color: aliceblue;
+        gap: 15px;
+        justify-content: center;
+        background-color: white;
+        width: auto;
+        height: auto;
+      }
+
+      footer {
+        margin-top: 10px;
+        border-radius: 20px;
+        display: inline-flex;
+        text-decoration: solid;
+        text-decoration-color: aliceblue;
+        gap: 15px;
+        justify-content: center;
+        background-color: white;
+        width: auto;
+        height: auto;
+      }
+
+      #submit {
+        font-size: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+      }
+
+      :hover #submit {
+        transform-style: unset;
+        color: antiquewhite;
+        background-color: gray;
+        border: white 1px solid;
+      }
+
+      #kode {
+        margin-left: 27px;
+      }
+
+      #barang {
+        margin-top: 10px;
+        margin-left: 5px;
+      }
+
+      .class-bawah {
+        padding: 10px;
+        width: fit-content;
+        margin-top: 20px;
+        border: 1px solid;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navigation">
+      <a>Home</a>
+      <a>About</a>
+      <a>Contact</a>
+    </nav>
+    <h1 class="title-web">UAP Web</h1>
+    <table>
+      <tr>
+        <td class="title-table">Kode</td>
+        <td class="title-table">Barang</td>
+        <td class="title-table">Harga</td>
+      </tr>
+      <tr>
+        <td>001</td>
+        <td>Barang A</td>
+        <td>10.000</td>
+      </tr>
+      <tr>
+        <td>002</td>
+        <td>Barang B</td>
+        <td>20.000</td>
+      </tr>
+      <tr>
+        <td>003</td>
+        <td>Barang C</td>
+        <td>30.000</td>
+      </tr>
+    </table>
+
+    <div class="class-bawah">
+      <h1>Inputan User</h1>
+      <label> Masukkan Kode: </label>
+      <input type="number" id="kode" />
+      <br />
+      <label>Banyaknya Barang: </label>
+      <input type="number" id="barang" />
+      <br />
+      <button type="submit" id="submit" onclick="input()">Submit</button>
+    </div>
+
+    <footer>
+      <p>Made by Rizky Haksono</p>
+    </footer>
+
+    <script>
+      let harga = [10000, 20000, 30000];
+      let kode = ["001", "002", "003"];
+
+      function input() {
+        let kode = document.getElementById("kode").value;
+        let barang = document.getElementById("barang").value;
+        let submit = document.getElementById("submit").value;
+
+        if (kode === "001") {
+          let total_barang = harga[0] * barang;
+          alert("Total harga: " + total_barang);
+          let uang = window.prompt("Masukkan uang anda: ");
+          let result = uang - total_barang;
+          alert("Kembalian anda: " + result);
+        } else if (kode === "002") {
+          let total_barang = harga[1] * barang;
+          alert("Total harga: " + total_barang);
+          let uang = window.prompt("Masukkan uang anda: ");
+          let result = uang - total_barang;
+          alert("Kembalian anda: " + result);
+        } else if (kode === "003") {
+          let total_barang = harga[2] * barang;
+          alert("Total harga: " + total_barang);
+          let uang = window.prompt("Masukkan uang anda: ");
+          let result = uang - total_barang;
+          alert("Kembalian anda: " + result);
+        } else {
+          alert("Inputan anda kosong");
+        }
+      }
+    </script>
+  </body>
+</html>
